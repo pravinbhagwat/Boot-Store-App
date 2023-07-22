@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+Project Overview
+User Interface
+Figma - https://www.figma.com/file/HmJl1YcejIXNc6Hr1ZQpjm/BookStore-UI?type=design&node-id=0%3A1&mode=design&t=DUj3MYs02a04qpfj-1
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Objective
+The goal of this project is to create a responsive online bookstore application. This application fetches data from Google Books API, displays it in an elegant UI as per the provided Figma design, provides a search feature, and gives detailed information about each book.
 
-## Available Scripts
+Project Brief
+Use the Google Books API to fetch and display data about books.
+Display a list of books obtained from the API requests in a visually appealing manner using the Figma design provided.
+Implement a search feature to find and display books based on user queries.
+Show a detailed information panel for each book when clicked, following the design in Figma.
+APIs Used
+We'll be hitting two APIs as soon as the user lands on the page:
 
-In the project directory, you can run:
+https://www.googleapis.com/books/v1/volumes?q=harry+potter
+https://www.googleapis.com/books/v1/volumes?q=Sherlock+Holmes
+Change the q according to your query.
+Project Setup
+Set up a new React application using create-react-app.
+Review the Figma design and plan your component hierarchy.
 
-### `npm start`
+Fetching and Displaying Initial Book Data
+Use useEffect to fetch data from atleast two API calls (search for harry+potter and sherlock+holmes) when the app loads.
+Use useState to store this book data.
+Map through this data to display the books on the home screen as per the Figma design.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Book Detail View
+When a book is clicked, expand its banner to full width and show detailed information about the book.
+The "Read Now" button should redirect the user to the previewLink from the book data.
+The "More Info" button should redirect the user to the infoLink from the book data.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Search Feature
+Implement a search bar in the top navbar.
+When the search button is clicked, fetch data from the Google Books API with the user's query and display the results. Make sure that whatever the user types becomes the q in the API endpoint.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
